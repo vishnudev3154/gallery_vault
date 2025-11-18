@@ -1,0 +1,26 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="{% static 'user.css' %}">
+</head>
+<body>
+    <h1>Welcome Home {{ user.name }}</h1>
+<a href="../addfile/" style="font-size: 40px; text-decoration: none;">Add file</a>
+<a href="../logout">Logout</a>
+
+<div>
+  {% for i in files %}
+    <div>
+      <img src="{{i.file.url}}" alt="image" width="100px" height="100px"><br>
+      <a href="{{i.file.url}}" target="_blank">click to view</a>
+    </div>
+  {% endfor %}
+</div>
+
+</body>
+</html>
